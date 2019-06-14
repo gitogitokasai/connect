@@ -1,0 +1,27 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/detail.css' %}">
+<div class="main">
+    <h1>{{ question.question_title }}</h1>
+
+    <p style="background-color:white" >{{ question.question_text }}</p>
+</div>
+
+{% for c in question.choice_set.all %}
+<table>
+    <tr><td><p>{{ c.name }} さん: </p></td><tr>
+    <tr><td><p style="background-color:white">{{ c.choice_text }}</p></td></tr><br>
+
+</table>
+{% endfor %}
+
+<div class="form">
+    <form action="{% url 'polls:detail' question.id %}" method="post">
+        {% csrf_token %}
+        {{ form.question }}
+        {{ form.name }}
+        {{ form.choice_text }}
+
+        <input type="submit" value="回答する">
+    </form>
+</div>

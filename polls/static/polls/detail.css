@@ -1,0 +1,16 @@
+label{
+    color: aliceblue;
+}
+
+.main{
+    text-align: center;
+}
+
+.form{
+    text-align: center;
+}
+
+body {
+    background: white url("images/flowers-1223882_1920.jpg") no-repeat;
+    background-size: cover;
+}

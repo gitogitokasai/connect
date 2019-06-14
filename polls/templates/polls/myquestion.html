@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>質問をしよう</title>
+</head>
+<body>
+<h1>質問を投稿してみんなの意見を聞いてみよう！</h1>
+<form action="{% url 'polls:insert'%}" method="post">
+{% csrf_token %}
+    <table>
+        <th>タイトル</th><br>
+        <th>質問内容</th>
+
+        <tr>
+            <td><textarea name="text_title" rows="3" cols="40"></textarea></td>
+            <td><textarea name="text_name" rows="20" cols="70"></textarea></td>
+        </tr>
+    </table>
+    <input type="submit" value="質問を投稿する">
+</form>
+
+</body>
+</html>
